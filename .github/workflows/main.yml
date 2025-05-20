@@ -20,7 +20,7 @@ jobs:
           java-version: "21"
 
       - name: Build and test with Maven
-        working-directory: Lab01/simpleapi
+        working-directory: simple-api-student-main
         run: mvn clean verify
 
   build-and-push-docker-image:
