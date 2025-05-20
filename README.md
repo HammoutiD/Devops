@@ -18,7 +18,14 @@ Question1 : What are testcontainers?
 Question2 : For what purpose do we need to use secured variables ? 
     secured variables to store and use sensitive data securely in our pipelines,and reduce security riskd during build or tests.
 
+Question3 : Why did we put needs: build-and-test-backend on this job? Maybe try without this and you will see!
+    we put it on this job to make sure it only runs if the test succeed.Although , if we remove it, Docker build will run no matter what even if the tests failed.
+
+Question4 :  For what purpose do we need to push docker images?
+    pushing makes your images portable and ready for deployment.
+
     
+
 
 
     

@@ -55,3 +55,11 @@ jobs:
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-simple-api-backend:latest
           push: ${{ github.ref == 'refs/heads/main' }}
       
+      - name: SonarCloud Scan
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: mvn sonar:sonar \
+           -Dsonar.organization=hammoutid \
+           -Dsonar.projectKey=HammoutiD_Devops \
+           -Dsonar.host.url=https://sonarcloud.io \
+           -Dsonar.login=$SONAR_TOKEN
