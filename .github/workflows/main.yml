@@ -23,6 +23,7 @@ jobs:
         working-directory: simple-api-student-main
         run: mvn clean verify
 
+
   build-and-push-docker-image:
     needs: test-backend
     runs-on: ubuntu-24.04
