@@ -15,7 +15,10 @@ TP2:
 Question1 : What are testcontainers?
     testcontainers are "postgres" or other languages or even libraries that helps you write automated tests using real, lightweight docker containers.
 
-Question2 : 
+Question2 : For what purpose do we need to use secured variables ? 
+    secured variables to store and use sensitive data securely in our pipelines,and reduce security riskd during build or tests.
+
+    
 
 
     
