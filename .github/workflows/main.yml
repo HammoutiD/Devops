@@ -34,10 +34,10 @@ jobs:
       - name: Login to Docker Hub
         run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login --username ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
 
-
       - name: Build image and push backend
         uses: docker/build-push-action@v6
         with:
           context: simpleapi
-          tags: ${{ secrets.DOCKER_USERNAME }}/tp-devops-simple-api-backend:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-simple-api-backend:latest
           push: ${{ github.ref == 'refs/heads/main' }}
+      
