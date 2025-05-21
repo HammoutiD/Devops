@@ -26,6 +26,27 @@ jobs:
         cd simple-api-student-main
         mvn clean verify
 
+    - name: Build image and push backend
+      uses: docker/build-push-action@v6
+      with:
+        context: simpleapi
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-simple-api-backend:latest
+        push: ${{ github.ref == 'refs/heads/main' }}
+
+    - name: Build image and push backend
+      uses: docker/build-push-action@v6
+      with:
+        context: database
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-simple-api-backend:latest
+        push: ${{ github.ref == 'refs/heads/main' }}
+
+
+    - name: Build image and push backend
+      uses: docker/build-push-action@v6
+      with:
+        context: http-server
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-simple-api-backend:latest
+        push: ${{ github.ref == 'refs/heads/main' }}
 
     - name: SonarCloud Scan
       env:
