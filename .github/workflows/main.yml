@@ -40,7 +40,6 @@ jobs:
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-simple-api-backend:latest
           push: ${{ github.ref == 'refs/heads/main' }}
 
-
       - name: Build image and push backend
         uses: docker/build-push-action@v6
         with:
@@ -54,7 +53,6 @@ jobs:
           context: http-server
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-simple-api-backend:latest
           push: ${{ github.ref == 'refs/heads/main' }}
-
 
       - name: SonarCloud Scan
         env:
